@@ -20,7 +20,7 @@ public class ObjectCycler : MonoBehaviour
         }
 
         objectList[0].SetActive(true);
-        buttonText.GetComponent<Text>().text = "Next: " + objectList[1].name;
+        buttonText.GetComponent<Text>().text = objectList[1].name;
 
         currentIndex = 0;
         previousIndex = 0;
@@ -38,16 +38,16 @@ public class ObjectCycler : MonoBehaviour
 
         if (currentIndex == objectList.Length - 1) {
             currentIndex = 0;
-            buttonText.GetComponent<Text>().text = "Next: " + objectList[1].name;
+            buttonText.GetComponent<Text>().text = objectList[1].name;
         }
         else {
             currentIndex++;
 
             if (currentIndex == objectList.Length - 1) {
-                buttonText.GetComponent<Text>().text = "Next: " + objectList[0].name;
+                buttonText.GetComponent<Text>().text = objectList[0].name;
             }
             else {
-                buttonText.GetComponent<Text>().text = "Next: " + objectList[currentIndex + 1].name;
+                buttonText.GetComponent<Text>().text = objectList[currentIndex + 1].name;
             }
         }
         
